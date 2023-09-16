@@ -1,7 +1,6 @@
 
 package bankmanagementsystem;
 
-import com.toedter.calendar.JDateChooser;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -11,7 +10,6 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -197,6 +195,9 @@ public class SignUpTwo extends JFrame implements ActionListener{
             Conn c = new Conn();
             String query = "insert into signuptwo values('"+formno+"', '"+sreligion+"','"+scategory+"','"+sincome+"','"+seducation+"','"+soccupation+"','"+seniorCitizen+"','"+existingAccount+"','"+span+"','"+saadhar+"')";
             c.s.executeUpdate(query);
+            
+            setVisible(false);
+            new SignUpThree(formno).setVisible(true);
         }catch(Exception e){
             System.out.println(e);
         }
